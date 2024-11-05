@@ -1,0 +1,49 @@
+.row{
+    text-align: center;
+}
+.row2{
+    text-align: center;
+
+}
+.row3{
+    text-align: center;
+}
+button{
+    position:static;
+    height: 80px;
+    width: 80px;
+    border-radius: 25%;
+}
+button:hover{
+    background-color: blueviolet;
+    padding: 40px;
+    transition-duration: 0.1s;
+}
+button:active{
+    background-color: cadetblue;
+    background-size: cover;
+}
+
+.text{
+    height: 200px;
+    width: 70%;
+    margin-left: 2%;
+    border:solid 1px;
+    border-color: black;
+}
+textarea{
+    width:100%;
+    height: 300px;
+    float: left;
+}
+.margin{
+    background-color: darkblue;
+    
+}
+.spacja{
+    text-align: center;
+}
+.sp{
+    width: 100px;
+    height: 100px;
+}

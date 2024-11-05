@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="państwa.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="naglow">daj mi narodowosc</div>
+        <div class="wpisz">
+            <input type="text" class="inp"
+            placeholder="Polska">
+            
+            <button class="przycisk"></button>
+        </div>
+        <div class="info">
+            <div class="nazwa"></div>
+            <div class="stolica"></div>
+            <img class="flaga">
+            <div class="jezyk"></div>
+            <div class="waluta"></div>
+            <div class=""></div>
+        </div>
+
+
+
+    <script>
+            let przycisk = document.querySelector(".przycisk")
+            let wpisz = document.querySelector(".inp")
+            let nazwa = document.querySelector(".nazwa")
+            let stolica = document.querySelector(".stolica")
+            let flaga = document.querySelector(".flaga")
+            let jezyk = document.querySelector(".jezyk")
+            let waluta = document.querySelector(".waluta")
+
+            let nazwa_K= "Poland"
+            wpisz.placeholder = localStorage.getItem('kraj')
+
+
+            wpisz.addEventListener('input', e=>{
+        localStorage.setItem('kraj', wpisz.value)
+    })
+
+
+
+    przycisk.addEventListener('click', e=>{
+
+        nazwa_K = localStorage.getItem('kraj')
+
+        wpisz.placeholder = localStorage.getItem('kraj')
+
+        fetch(`https://restcountries.com/v3.1/name/${nazwa_K}`)
+
+    .then(res => res.json())
+
+    .then(res => {
+
+        console.log(res[0]);
+        nazwa.innerHTML = res[0].name.common
+        stolica.innerHTML = res[0].capital
+        flaga.src = res[0].flags['png']
+
+    });
+    })
+
+
+    
+
+    </script>
+</body>
+</html>

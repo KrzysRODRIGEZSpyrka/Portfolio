@@ -1,0 +1,69 @@
+
+.srodek > p{
+    margin: 5px;
+    text-align: center;
+    font-size: 70px;
+}
+.kolo{
+    width: 400px;
+    height: 400px;
+    background: url(messi.webp);
+    background-position: center;
+    background-size: 101%;
+    border: solid 4px black;
+    border-radius: 50%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    
+    
+
+}
+
+.kolo > p{
+    position: relative;
+    font-size: 30px;
+}
+.sek{
+    background-color: red;
+    height: 200px;
+    width: 5px;
+    position:absolute;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+}
+
+.min{
+    background-color: black;
+    height: 200px;
+    width: 5px;
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+}
+
+.h{
+    background-color: black;
+    top: 180px;
+    height: 130px;
+    width: 5px;
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+}
+body{
+    background: url(plaza.webp);
+    background-size: cover;
+    
+}
+.pupu{
+    position: absolute;
+    left: 50%;
+    bottom: 600px;
+    font-style: italic;
+    font-size: larger;
+}

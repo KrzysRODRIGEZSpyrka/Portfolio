@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="zegar.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id = "clock" onload="currentTime()"></div>
+
+    <div class="rama">
+        <div class="srodek">
+            <p class="godzina">
+        </div>
+    </div>
+
+    <div class="kolo">
+        <div class="sek"></div>
+        <div class="min"></div>
+        <div class="h"></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    </div>
+    <div class="pupu">
+        <h1>Jest godzina:</h1>
+    </div>
+
+
+    <script>
+
+data = new Date();
+            godzina = data.getHours();
+            minuta = data.getMinutes();
+            sekunda = data.getSeconds();
+
+        divgodz = document.querySelector(".godzina");
+        wsazsek = document.querySelector(".sek");
+        wsazmin = document.querySelector(".min");
+        wsazh = document.querySelector(".h");
+        let rotacja = 0;
+        rotacjasek = sekunda*6;
+        rotacjamin = minuta*6;
+        rotacjah = godzina*30;
+
+        setInterval(e=>{
+            data = new Date();
+            godzina = data.getHours();
+            if(godzina<10) godzina = "0"+godzina
+            minuta = data.getMinutes();
+            if(minuta<10) minuta = "0"+minuta
+            sekunda = data.getSeconds();
+            if(sekunda<10) sekunda = "0"+sekunda
+            divgodz.innerHTML = `${godzina}:${minuta}:${sekunda}`
+
+        },1000)
+
+        setInterval(sek=>{
+            data = new Date();
+            godzina = data.getHours();
+            minuta = data.getMinutes();
+            sekunda = data.getSeconds();
+            
+            rotacjasek +=6;
+            if(sekunda == 00) rotacjamin +=6;
+            if(minuta == 60) rotacjah +=6; 
+            console.log(rotacjamin);
+            console.log(rotacjah);
+
+            wsazsek.style.transform = "rotate("+ rotacjasek + "deg)";
+            wsazmin.style.transform = "rotate("+ rotacjamin + "deg)";
+            wsazh.style.transform = "rotate("+ rotacjah + "deg)";
+
+ 
+        },1000)
+    </script>
+</body>
+</html>
